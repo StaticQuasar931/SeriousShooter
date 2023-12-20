@@ -30,39 +30,107 @@
 #include "inc/esAux5.h"
 
 #include "inc/res.h"
-#include "assets/scene.h"    //0
-#include "assets/ak47.h"     //1
-#include "assets/pistol.h"   //2
-#include "assets/revolver.h" //3
-#include "assets/flash.h"    //4
-#include "assets/pig1.h"     //5
-#include "assets/pig2.h"     //6
-#include "assets/girl.h"     //7
-#include "assets/octo.h"     //8
-#include "assets/bird1.h"    //9
-#include "assets/snail.h"    //10
-#include "assets/thing.h"    //11
-#include "assets/ted1.h"     //12
-#include "assets/bird2.h"    //13
-#include "assets/dunno.h"    //14
-#include "assets/owl.h"      //15
-#include "assets/cat.h"      //16
-#include "assets/bunny.h"    //17
-#include "assets/alien1.h"   //18
-#include "assets/ted2.h"     //19
-#include "assets/alien2.h"   //20
-#include "assets/deer.h"     //21
-#include "assets/ted3.h"     //22
-#include "assets/eye.h"      //23
-#include "assets/fox.h"      //24
-#include "assets/mystic.h"   //25
-#include "assets/devil.h"    //26
-#include "assets/cop.h"      //27
-#include "assets/queen.h"    //28
-#include "assets/pharo.h"    //29
-#include "assets/ufo.h"      //30
-#include "assets/crosshair.h"//31
-#include "assets/colt.h"     //32
+#include "assets/crosshair.h" //31
+#ifdef LOW
+    #include "assets/low/scene.h"    //0
+    #include "assets/low/ak47.h"     //1
+    #include "assets/low/pistol.h"   //2
+    #include "assets/low/revolver.h" //3
+    #include "assets/low/flash.h"    //4
+    #include "assets/low/pig1.h"     //5
+    #include "assets/low/pig2.h"     //6
+    #include "assets/low/girl.h"     //7
+    #include "assets/low/octo.h"     //8
+    #include "assets/low/bird1.h"    //9
+    #include "assets/low/snail.h"    //10
+    #include "assets/low/thing.h"    //11
+    #include "assets/low/ted1.h"     //12
+    #include "assets/low/bird2.h"    //13
+    #include "assets/low/dunno.h"    //14
+    #include "assets/low/owl.h"      //15
+    #include "assets/low/cat.h"      //16
+    #include "assets/low/bunny.h"    //17
+    #include "assets/low/alien1.h"   //18
+    #include "assets/low/ted2.h"     //19
+    #include "assets/low/alien2.h"   //20
+    #include "assets/low/deer.h"     //21
+    #include "assets/low/ted3.h"     //22
+    #include "assets/low/eye.h"      //23
+    #include "assets/low/fox.h"      //24
+    #include "assets/low/mystic.h"   //25
+    #include "assets/low/devil.h"    //26
+    #include "assets/low/cop.h"      //27
+    #include "assets/low/queen.h"    //28
+    #include "assets/low/pharo.h"    //29
+    #include "assets/low/ufo.h"      //30
+    #include "assets/low/colt.h"     //32
+#elif MED
+    #include "assets/med/scene.h"    //0
+    #include "assets/med/ak47.h"     //1
+    #include "assets/med/pistol.h"   //2
+    #include "assets/med/revolver.h" //3
+    #include "assets/med/flash.h"    //4
+    #include "assets/med/pig1.h"     //5
+    #include "assets/med/pig2.h"     //6
+    #include "assets/med/girl.h"     //7
+    #include "assets/med/octo.h"     //8
+    #include "assets/med/bird1.h"    //9
+    #include "assets/med/snail.h"    //10
+    #include "assets/med/thing.h"    //11
+    #include "assets/med/ted1.h"     //12
+    #include "assets/med/bird2.h"    //13
+    #include "assets/med/dunno.h"    //14
+    #include "assets/med/owl.h"      //15
+    #include "assets/med/cat.h"      //16
+    #include "assets/med/bunny.h"    //17
+    #include "assets/med/alien1.h"   //18
+    #include "assets/med/ted2.h"     //19
+    #include "assets/med/alien2.h"   //20
+    #include "assets/med/deer.h"     //21
+    #include "assets/med/ted3.h"     //22
+    #include "assets/med/eye.h"      //23
+    #include "assets/med/fox.h"      //24
+    #include "assets/med/mystic.h"   //25
+    #include "assets/med/devil.h"    //26
+    #include "assets/med/cop.h"      //27
+    #include "assets/med/queen.h"    //28
+    #include "assets/med/pharo.h"    //29
+    #include "assets/med/ufo.h"      //30
+    #include "assets/med/colt.h"     //32
+#else
+    #include "assets/high/scene.h"    //0
+    #include "assets/high/ak47.h"     //1
+    #include "assets/high/pistol.h"   //2
+    #include "assets/high/revolver.h" //3
+    #include "assets/high/flash.h"    //4
+    #include "assets/high/pig1.h"     //5
+    #include "assets/high/pig2.h"     //6
+    #include "assets/high/girl.h"     //7
+    #include "assets/high/octo.h"     //8
+    #include "assets/high/bird1.h"    //9
+    #include "assets/high/snail.h"    //10
+    #include "assets/high/thing.h"    //11
+    #include "assets/high/ted1.h"     //12
+    #include "assets/high/bird2.h"    //13
+    #include "assets/high/dunno.h"    //14
+    #include "assets/high/owl.h"      //15
+    #include "assets/high/cat.h"      //16
+    #include "assets/high/bunny.h"    //17
+    #include "assets/high/alien1.h"   //18
+    #include "assets/high/ted2.h"     //19
+    #include "assets/high/alien2.h"   //20
+    #include "assets/high/deer.h"     //21
+    #include "assets/high/ted3.h"     //22
+    #include "assets/high/eye.h"      //23
+    #include "assets/high/fox.h"      //24
+    #include "assets/high/mystic.h"   //25
+    #include "assets/high/devil.h"    //26
+    #include "assets/high/cop.h"      //27
+    #include "assets/high/queen.h"    //28
+    #include "assets/high/pharo.h"    //29
+    #include "assets/high/ufo.h"      //30
+    #include "assets/high/colt.h"     //32
+#endif
 
 //*************************************
 // globals
@@ -203,8 +271,7 @@ void spawnEnemyPos(const float x, const float y)
         {
             et[i] = esRand(1, 20);
             const float a = esRandFloat(-PI, PI);
-            ex[i] = x;
-            ey[i] = y;
+            ex[i] = x, ey[i] = y;
             es[i] = esRandFloat(1.f, 3.f);
             emh[i]= esRand(4, 16);
             eh[i] = emh[i];
@@ -220,8 +287,7 @@ void spawnAlienPos(const float x, const float y)
         {
             et[i] = esRand(20, 25);
             const float a = esRandFloat(-PI, PI);
-            ex[i] = x;
-            ey[i] = y;
+            ex[i] = x, ey[i] = y;
             es[i] = esRandFloat(3.f, 5.f);
             emh[i]= esRand(16, 24);
             eh[i] = emh[i];
@@ -573,7 +639,7 @@ void main_loop()
         }
     }
 
-    ///
+    // weapons
     vec np;
     if(weapon == 1)
     {
@@ -879,12 +945,12 @@ void main_loop()
     if(rkick == 1){mRotY(&model, 0.26f);}
     mSetPos(&model, np);
 
-    // render it
+    // render weapon
     updateModelView();
     glClear(GL_DEPTH_BUFFER_BIT);
     esBindRender(weapon == 4 ? 32 : weapon);
     
-    // crosshair
+    // render crosshair
     vec ld = lookz;
     ld.z = 0.f;
     vMulS(&ld, ld, 32.f);
