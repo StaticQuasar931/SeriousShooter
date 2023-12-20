@@ -3,7 +3,7 @@
 * **Play Online:** https://mrbid.github.io/seriousshooter
 * **Flathub:** https://flathub.org/apps/com.voxdsp.SeriousShooter
 * **Snapcraft:** https://snapcraft.io/seriousshooter
-* **Windows:** tba
+* **Windows:** [SeriousShooter_windows.zip](https://github.com/mrbid/SeriousShooter/releases/download/1.0/SeriousShooter_windows.zip)
 
 **Latest upto date repository at:** https://notabug.org/Vandarin/SeriousShooter
 
