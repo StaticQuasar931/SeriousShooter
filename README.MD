@@ -1,6 +1,6 @@
 ![Screenshot of the TuxScape game](https://raw.githubusercontent.com/mrbid/SeriousShooter/main/screenshot.png)
 
-* **Play Online:** https://mrbid.github.io/seriousshooter
+* **Play Online:** [High Quality](https://mrbid.github.io/seriousshooter) - [Medium Quality](https://mrbid.github.io/seriousshooter/med) - [Low Quality](https://mrbid.github.io/seriousshooter/low)
 * **Flathub:** https://flathub.org/apps/com.voxdsp.SeriousShooter
 * **Snapcraft:** https://snapcraft.io/seriousshooter
 * **Windows:** [SeriousShooter_windows.zip](https://github.com/mrbid/SeriousShooter/releases/download/1.1/SeriousShooter_windows.zip)
