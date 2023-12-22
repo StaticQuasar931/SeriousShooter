@@ -30,9 +30,9 @@ modules:
     build-commands:
       - cc main.c glad_gl.c -I inc -Ofast -L/app/lib -lglfw -lm -o seriousshooter
       - install -Dm 0755 seriousshooter -t ${FLATPAK_DEST}/bin
-      - install -Dm 0644 flatpak/seriousshooter.desktop ${FLATPAK_DEST}/share/applications/seriousshooter.desktop
-      - install -Dm 0644 flatpak/seriousshooter.appdata.xml ${FLATPAK_DEST}/share/metainfo/seriousshooter.appdata.xml
-      - install -Dm 0644 flatpak/seriousshooter.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/seriousshooter.png
+      - install -Dm 0644 flat/seriousshooter.desktop ${FLATPAK_DEST}/share/applications/seriousshooter.desktop
+      - install -Dm 0644 flat/seriousshooter.appdata.xml ${FLATPAK_DEST}/share/metainfo/seriousshooter.appdata.xml
+      - install -Dm 0644 flat/seriousshooter.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/seriousshooter.png
     sources:
       - type: git
         url: https://notabug.org/Vandarin/seriousshooter.git
