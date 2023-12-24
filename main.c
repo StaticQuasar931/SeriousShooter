@@ -1,6 +1,6 @@
 /*
     James William Fletcher  ( notabug.org/Vandarin )
-        November 2023       ( github.com/mrbid     )
+        December 2023       ( github.com/mrbid     )
 
     It's Serious Shooter! Not Serious Tux, yet, Sam!
 */
@@ -1018,6 +1018,7 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
             weapon = 4;
             wepkick = 0.f;
             rkick = 0;
+            wepflash = t;
         }
     }
     else if(action == GLFW_RELEASE)
@@ -1037,6 +1038,7 @@ void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
     if(weapon < 1){weapon = 3;}
     wepkick = 0.f;
     rkick = 0;
+    wepflash = t;
 }
 void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 {
