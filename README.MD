@@ -5,10 +5,6 @@
 * **Snapcraft:** https://snapcraft.io/seriousshooter
 * **Windows:** [SeriousShooter_windows.zip](https://github.com/mrbid/SeriousShooter/releases/download/1.2/SeriousShooter_windows.zip)
 
-**Latest upto date repository at:** https://notabug.org/Vandarin/SeriousShooter
-
-*This repository was only created for the Snapcraft submission.*
-
 ## controls
 *Mouse locks when you click on the window, press ESCAPE to unlock the mouse.*
 
