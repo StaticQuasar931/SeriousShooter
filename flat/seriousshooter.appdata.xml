@@ -7,7 +7,7 @@
 	<summary>3D FPS approved by Uncle Sam</summary>
 	<description>
 		<p>25 Different Enemies, 3 Weapons, GOD MODE!</p>
-		<p>... and a secret hidden weapon bound to a key ;)</p>
+		<p>... and two secret hidden weapons bound to two keys ;)</p>
 		<p>Mouse locks when you click on the window, press ESCAPE to unlock the mouse.</p>
 		<ul>
 			<li>W,A,S,D / Arrow Keys = Move</li>
@@ -22,7 +22,10 @@
 	</screenshots>
 	<url type="homepage">https://mrbid.github.io/seriousshooter</url>
 	<releases>
-		<release version="1.0" date="2023-12-20" />
+		<release version="1.1" date="2023-12-30">
+			<description><ul><li>Added the Golden AK-47 on another secret keybind 🤫.</li></ul></description>
+		</release>
+      </description>
 	</releases>
 	<content_rating type="oars-1.0" />
 </application>

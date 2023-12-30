@@ -26,7 +26,7 @@
 #include "inc/glfw3.h"
 #define fTime() (float)glfwGetTime()
 
-#define MAX_MODELS 33 // hard limit, be aware and increase if needed
+#define MAX_MODELS 34 // hard limit, be aware and increase if needed
 #include "inc/esAux5.h"
 
 #include "inc/res.h"
@@ -64,6 +64,7 @@
     #include "assets/low/pharo.h"    //29
     #include "assets/low/ufo.h"      //30
     #include "assets/low/colt.h"     //32
+    #include "assets/low/goldak.h"   //33
 #elif MED
     #include "assets/med/scene.h"    //0
     #include "assets/med/ak47.h"     //1
@@ -97,6 +98,7 @@
     #include "assets/med/pharo.h"    //29
     #include "assets/med/ufo.h"      //30
     #include "assets/med/colt.h"     //32
+    #include "assets/med/goldak.h"   //33
 #else
     #include "assets/high/scene.h"    //0
     #include "assets/high/ak47.h"     //1
@@ -130,6 +132,7 @@
     #include "assets/high/pharo.h"    //29
     #include "assets/high/ufo.h"      //30
     #include "assets/high/colt.h"     //32
+    #include "assets/high/goldak.h"   //33
 #endif
 
 //*************************************
@@ -348,6 +351,7 @@ void doAttack()
         else if(weapon == 2){eh[sid]-=8;}
         else if(weapon == 3){eh[sid]--;}
         else if(weapon == 4){eh[sid]-=1337;}
+        else if(weapon == 5){eh[sid]-=1337;}
         ehs[sid] = 1;
         if(eh[sid] <= 0)
         {
@@ -937,6 +941,75 @@ void main_loop()
             }
         }
     }
+    else if(weapon == 5)
+    {
+        if(t > wepkick)
+        {
+            wepoff = 0.f;
+            wepkick = t+0.03f;
+        }
+        
+        // position weapon
+        vec ld = lookz;
+        ld.z = 0.f;
+        vMulS(&ld, ld, 0.79f-wepoff); // far from camera
+        np = (vec){-pp.x, -pp.y, -pp.z};
+        vAdd(&np, np, ld);
+
+        // x offset
+        vec vx = lookx;
+        vMulS(&vx, vx, -0.4f);
+        vAdd(&np, np, vx);
+
+        // y offset
+        vec vy = looky;
+        vMulS(&vy, vy, 0.34f);
+        vAdd(&np, np, vy);
+
+        if(t < wepflash)
+        {
+            const float opad = (wepflash-t)*10.f;
+
+            vec fp = np;
+            // x offset
+            vx = lookx;
+            vMulS(&vx, vx, -0.14f);
+            vAdd(&fp, fp, vx);
+            // y offset
+            vy = looky;
+            vMulS(&vy, vy, -0.14f);
+            vAdd(&fp, fp, vy);
+            // z offset
+            vec vz = lookz;
+            vMulS(&vz, vz, 0.7f);
+            vAdd(&fp, fp, vz);
+
+            mIdent(&model);
+            mScale1(&model, 0.16f);
+            mRotZ(&model, -(xrot+PI-0.23f));
+            mRotX(&model, t*5.f); //randf()*x2PI
+            mSetPos(&model, fp);
+            updateModelView();
+            glEnable(GL_BLEND);
+            glUniform1f(opacity_id, opad);
+            esBindRender(4);
+            glDisable(GL_BLEND);
+        }
+
+        // muzzle flash relative to weapon position
+        if(ldown == 1)
+        {
+            if(t > wepfreq)
+            {
+                doAttack();
+                wepkick = t+0.03f;
+                wepoff = 0.02f;
+                const float fire_rate = t+0.1f;
+                wepflash = fire_rate;
+                wepfreq = wepflash;
+            }
+        }
+    }
 
     // rotate to camera direction with slight offset and set pos
     mIdent(&model);
@@ -948,7 +1021,7 @@ void main_loop()
     // render weapon
     updateModelView();
     glClear(GL_DEPTH_BUFFER_BIT);
-    esBindRender(weapon == 4 ? 32 : weapon);
+    esBindRender(weapon == 4 ? 32 : weapon ==  5 ? 33 : weapon); // lol 🤪
     
     // render crosshair
     vec ld = lookz;
@@ -1016,6 +1089,13 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
         else if(key == GLFW_KEY_G)
         {
             weapon = 4;
+            wepkick = 0.f;
+            rkick = 0;
+            wepflash = t;
+        }
+        else if(key == GLFW_KEY_P)
+        {
+            weapon = 5;
             wepkick = 0.f;
             rkick = 0;
             wepflash = t;
@@ -1208,6 +1288,7 @@ int main(int argc, char** argv)
     register_ufo();
     register_crosshair();
     register_colt();
+    register_goldak();
 
 //*************************************
 // compile & link shader programs
