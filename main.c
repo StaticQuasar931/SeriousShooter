@@ -335,8 +335,23 @@ void doAttack()
             ym = (tly - ey[i]);
             float dist = xm*xm + ym*ym;
 
-            //printf("%u: %f %f %f %f\n", i, dist, dist1, ex[i], ey[i]);
-            if(dist < 0.36f && dist1 < sdis)
+            if(weapon == 4 && dist < 0.36f) // let the gold colt go through multiple enemies at once
+            {
+                shotshit++;
+                eh[i]-=1337;
+                ehs[i] = 1;
+                if(eh[i] <= 0)
+                {
+                    eh[i] = 0;
+                    if(ed[i] == 0)
+                    {
+                        if(et[i] >= 20 && et[i] <= 25){alienskilled++;}else{normieskilled++;}
+                        updateTitle();
+                    }
+                    ed[i] = 1;
+                }
+            }
+            else if(dist < 0.36f && dist1 < sdis) // all other guns hit the nearest and stop there
             {
                 sdis = dist1;
                 sid = i;
@@ -350,7 +365,6 @@ void doAttack()
         if(weapon == 1){eh[sid]-=4;}
         else if(weapon == 2){eh[sid]-=8;}
         else if(weapon == 3){eh[sid]--;}
-        else if(weapon == 4){eh[sid]-=1337;}
         else if(weapon == 5){eh[sid]-=1337;}
         ehs[sid] = 1;
         if(eh[sid] <= 0)
