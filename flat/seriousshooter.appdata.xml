@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<application>
-	<id type="desktop">seriousshooter.desktop</id>
+<component type="desktop-application">
+	<id>com.voxdsp.SeriousShooter</id>
 	<metadata_license>CC-BY-4.0</metadata_license>
 	<project_license>GPL-2.0-only</project_license>
+	<developer_name>James William Fletcher</developer_name>
+	<launchable type="desktop-id">com.voxdsp.SeriousShooter.desktop</launchable>
 	<name>Serious Shooter</name>
 	<summary>3D FPS approved by Uncle Sam</summary>
 	<description>
@@ -18,7 +20,10 @@
 		</ul>
 	</description>
 	<screenshots>
-		<screenshot>https://notabug.org/Vandarin/SeriousShooter/raw/master/screenshot.png</screenshot>
+		<screenshot type="default">
+			<image>https://notabug.org/Vandarin/SeriousShooter/raw/master/screenshot.png</image>
+			<caption>SeriousShooter Screenshot</caption>
+		</screenshot>
 	</screenshots>
 	<url type="homepage">https://mrbid.github.io/seriousshooter</url>
 	<releases>
@@ -27,4 +32,4 @@
 		</release>
 	</releases>
 	<content_rating type="oars-1.0" />
-</application>
+</component>
