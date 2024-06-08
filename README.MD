@@ -3,7 +3,7 @@
 * **Play Online:** [High Quality](https://mrbid.github.io/seriousshooter) - [Medium Quality](https://mrbid.github.io/seriousshooter/med) - [Low Quality](https://mrbid.github.io/seriousshooter/low)
 * **Flathub:** https://flathub.org/apps/com.voxdsp.SeriousShooter
 * **Snapcraft:** https://snapcraft.io/seriousshooter
-* **Windows:** https://github.com/mrbid/SeriousShooter/releases/tag/1.4
+* **Windows:** https://github.com/mrbid/SeriousShooter/releases
 
 ## controls
 *Mouse locks when you click on the window, press ESCAPE to unlock the mouse.*
