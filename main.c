@@ -483,14 +483,12 @@ void main_loop()
     // strafe left & right
     if(keystate[0] == 1)
     {
-        mGetViewX(&lookx, view);
         vec m;
         vMulS(&m, lookx, MOVE_SPEED * dt);
         vSub(&pp, pp, m);
     }
     else if(keystate[1] == 1)
     {
-        mGetViewX(&lookx, view);
         vec m;
         vMulS(&m, lookx, MOVE_SPEED * dt);
         vAdd(&pp, pp, m);
