@@ -8,6 +8,7 @@
     <link rel="manifest" href='data:application/manifest+json,{"display":"standalone"}' />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" />
+    <link rel="canonical" href="https://staticquasar931.github.io/SeriousShooter/">
 
     <!-- Favicons -->
     <link href="favicon.png" rel="shortcut icon">
@@ -30,7 +31,7 @@
     <meta name="og:type" content="website">
     <meta name="og:title" content="Play Serious Shooter Unblocked – 3D FPS G@me Online">
     <meta name="og:site_name" content="StaticQuasar931 – Free Online G@mes">
-    <meta name="og:url" content="https://staticquasar931.github.io/SeriousShooter/">
+    <meta name="og:url" content="https://staticquasar931.github.io/SeriousShooter">
 
     <meta name="theme-color" content="#ffbf00">
     <meta name="twitter:card" content="summary_large_image">
@@ -44,7 +45,7 @@
       "@context": "https://schema.org",
       "@type": "VideoGame",
       "name": "Serious Shooter",
-      "url": "https://staticquasar931.github.io/SeriousShooter/",
+      "url": "https://staticquasar931.github.io/SeriousShooter",
       "applicationCategory": "Game",
       "operatingSystem": "Any",
       "description": "Play Serious Shooter unblocked, a 3D FPS g@me you can enjoy anywhere. No downloads, no limits.",
@@ -60,23 +61,15 @@
     </style>
 </head>
 <body>
-    <canvas id="canvas" onclick="this.focus();this.requestPointerLock()" oncontextmenu="event.preventDefault()" tabindex=-1></canvas>
-    <script type='text/javascript'>var Module = {canvas: document.getElementById('canvas')};</script>
-    {{{ SCRIPT }}}
-</body>
-</html>
-
-
-    <style>
-    canvas { border: 0px none; outline: none; background-color: black; }
-    * { margin:0; padding:0; }
-    html, body { width:100%; height:100%; overflow:hidden; background-color:#000; }
-    </style>
-
-</head>
-<body>
-    <canvas id="canvas" onclick="this.focus();this.requestPointerLock()" oncontextmenu="event.preventDefault()" tabindex=-1></canvas>
-    <script type='text/javascript'>var Module = {canvas: document.getElementById('canvas')};</script>
-    {{{ SCRIPT }}}
+    <canvas id="canvas" onclick="this.focus();this.requestPointerLock()" oncontextmenu="event.preventDefault()" tabindex="-1"></canvas>
+    <script type="text/javascript">
+        var Module = {
+            canvas: document.getElementById('canvas'),
+            onRuntimeInitialized: function() {
+                console.log("Emscripten runtime initialized");
+            }
+        };
+    </script>
+    <script src="SeriousShooter.js"></script>
 </body>
 </html>
